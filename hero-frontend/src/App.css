@@ -1,42 +1,225 @@
-#root {
-  max-width: 1280px;
+/* The scaffold's index.css centres the body with flex; this page wants a document
+   layout, so that is overridden here rather than by editing the scaffold file. */
+body {
+  display: block;
+  place-items: initial;
+}
+
+.app {
+  max-width: 980px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 24px 16px 64px;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sub {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0 0 8px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
 .card {
-  padding: 2em;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  padding: 18px 20px;
+  background: rgba(128, 128, 128, 0.06);
 }
 
-.read-the-docs {
-  color: #888;
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+label.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+input, textarea {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  background: transparent;
+  color: inherit;
+}
+
+button.chosen {
+  border-color: #4c9a5a;
+  background: rgba(76, 154, 90, 0.25);
+}
+
+button.danger {
+  border-color: rgba(200, 80, 80, 0.6);
+}
+
+button.link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  background: rgba(128, 128, 128, 0.12);
+}
+
+.count strong {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.count span {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.people {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.people li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.18);
+}
+
+.badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.badge.cancelled {
+  border-color: rgba(200, 80, 80, 0.7);
+  color: #d97070;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.65;
+  margin: 8px 0 0;
+}
+
+.notice {
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: rgba(200, 160, 60, 0.18);
+  border: 1px solid rgba(200, 160, 60, 0.4);
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #e06a6a;
+  font-size: 0.9rem;
+}
+
+.good {
+  color: #5cb974;
+}
+
+.warn {
+  color: #d3a44e;
+}
+
+.standing {
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+.token {
+  display: block;
+  font-size: 0.75rem;
+  word-break: break-all;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(128, 128, 128, 0.15);
 }
